@@ -1,0 +1,156 @@
+openapi: 3.0.3
+info:
+  title: Sample API with Deprecated Endpoint
+  description: This is a sample API specification that includes a deprecated endpoint.
+  version: 1.0.0
+
+servers:
+  - url: https://api.example.com/v1
+
+paths:
+  /deprecated-endpoint:
+    get:
+      summary: Deprecated Endpoint I am testing this new test test againnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+      description: This endpoint is deprecated and will be removed in a future release.
+      deprecated: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "This endpoint is deprecated."
+        '410':
+          description: Gone - This endpoint has been removed.
+
+  /deprecated-endpoint-post:
+    post:
+      summary: Deprecated Endpoint
+      description: This endpoint is deprecated and will be removed in a future release.
+      deprecated: true
+      requestBody:
+        description: Input for the deprecated endpoint
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                exampleField:
+                  type: string
+                  example: "Example value"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "This endpoint is deprecated."
+        '410':
+          description: Gone - This endpoint has been removed.   
+
+  /deprecated-endpoint-patch:
+    patch:
+      summary: Deprecated Endpoint (PATCH)
+      description: This endpoint is deprecated and will be removed in a future release.
+      deprecated: true
+      requestBody:
+        description: Input for the deprecated PATCH endpoint
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                exampleField:
+                  type: string
+                  example: "Updated value"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "PATCH request processed but endpoint is deprecated."
+        '410':
+          description: Gone - This endpoint has been removed.
+
+  /deprecated-endpoint-put:
+    put:
+      summary: Deprecated Endpoint (PUT)
+      description: This endpoint is deprecated and will be removed in a future release.
+      deprecated: true
+      requestBody:
+        description: Input for the deprecated PUT endpoint
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                exampleField:
+                  type: string
+                  example: "New value"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "PUT request processed but endpoint is deprecated."
+        '410':
+          description: Gone - This endpoint has been removed.
+
+  /deprecated-endpoint-delete:
+    delete:
+      summary: Deprecated Endpoint (DELETE)
+      description: This endpoint is deprecated and will be removed in a future release.
+      deprecated: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "DELETE request processed but endpoint is deprecated."
+        '410':
+          description: Gone - This endpoint has been removed.
+
+  
+  
+  /active-endpoint:
+    get:
+      summary: Active Endpoint
+      description: This is an active and fully supported endpoint.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: string
