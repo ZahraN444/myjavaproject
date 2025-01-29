@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: Sample API with Deprecated Endpoint
-  description: This is a sample API specification that includes a deprecated endpoint.
+  description: This is a sample API speddcification that includes a deprecated endpoint.
   version: 1.0.0
 
 servers:
